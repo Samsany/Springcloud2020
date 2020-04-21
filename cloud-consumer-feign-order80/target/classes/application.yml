@@ -24,3 +24,9 @@ feign:
         connectTimeout: 5000
         # 指的是建立连接所用的时间,适用于网络状态正常的情况下,两端连接所用的时间
         readTimeout: 5000
+        loggerLevel: full
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.samphanie.springcloud.service.IPaymentFeignService: debug
