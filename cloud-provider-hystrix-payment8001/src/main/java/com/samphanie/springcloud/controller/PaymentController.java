@@ -1,5 +1,8 @@
 package com.samphanie.springcloud.controller;
 
+import cn.hutool.core.util.IdUtil;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.samphanie.springcloud.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +38,17 @@ public class PaymentController {
     @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfoTimeout(@PathVariable("id") Integer id) {
         String result = paymentService.paymentInfoTimeout(id);
+        log.info("【请求结果】 result: {}", result);
+
+        return result;
+    }
+
+    /**
+     * 服务熔断
+     */
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
         log.info("【请求结果】 result: {}", result);
 
         return result;
