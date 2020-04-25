@@ -1,18 +1,15 @@
 server:
-  port: 3344
+  port: 3366
 
 spring:
   application:
-    name: cloud-config-center
+    name: config-client
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/Samsany/spring-cloud2020-config.git  # GitHub上的git仓库名称
-          search-paths:
-            - spring-cloud-config
-      # 读取分支
-      label: master
+      label: master                   # 分支名称
+      name: config                    # 配置文件名称
+      profile: dev                    # 读取后缀名称
+      uri: http://localhost:3344      # 配置中心地址
 
   # rabbitmq配置
   rabbitmq:
@@ -22,20 +19,19 @@ spring:
     password: Zxx131013@
     virtual-host: /
 
-# 服务注册到eureka
 eureka:
   client:
-    register-with-eureka: true
     fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true
 
-# 暴露bus刷新的端口
+# 暴露监控端点
 management:
   endpoints:
     web:
       exposure:
-        include: "bus-refresh"
+        include: "*"

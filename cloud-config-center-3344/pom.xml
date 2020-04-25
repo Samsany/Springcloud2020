@@ -12,10 +12,17 @@
     <artifactId>cloud-config-center-3344</artifactId>
 
     <dependencies>
+        <!--添加消息总线RabbitMQ支持-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <!--spring-cloud config分布式服务配置服务端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+        <!--微服务注册与发现Eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -50,8 +57,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
 
 </project>
