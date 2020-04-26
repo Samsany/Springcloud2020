@@ -10,6 +10,13 @@ spring:
     url: jdbc:mysql://www.samphanie.cn:3306/db2020?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimeZone=UTC
     username: sam
     password: Zxx131013@
+  # zipkin链路监控配置
+  zipkin:
+    base-url: localhost:9411
+  sleuth:
+    sampler:
+      # 采样率值介于0到1之间
+      probability: 1.0
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -28,11 +35,15 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka # 集群版
 
   instance:
-    instance-id: payment8001
+    instance-id: ${spring.application.name}:${server.port}
     # 访问路径可以显示IP地址
     prefer-ip-address: true
     # Eureka 客户端向服务器发送心跳的时间间隔，单位为秒（默认为30s）
     # lease-renewal-interval-in-seconds: 1
     # Eureka服务端在收到最好一次心跳后等待时间上限，单位为秒（默认为90s），超时将剔除服务
     # lease-expiration-duration-in-seconds: 2
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

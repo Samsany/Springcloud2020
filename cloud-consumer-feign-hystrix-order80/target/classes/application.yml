@@ -1,13 +1,22 @@
 server:
   port: 80
 
+spring:
+  application:
+    name: feign-hystrix-order80
+  zipkin:
+    base-url: localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: feignhystrixorder80
+    instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
     fetch-registry: true
     register-with-eureka: true
 
@@ -21,3 +30,8 @@ feign:
         connectTimeout: 3000
         # 指的是建立连接所用的时间,适用于网络状态正常的情况下,两端连接所用的时间
         readTimeout: 3000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -2,6 +2,6 @@ com\samphanie\springcloud\service\impl\PaymentServiceImpl.class
 com\samphanie\springcloud\PaymentMain8001.class
 com\samphanie\springcloud\controller\PaymentController.class
 com\samphanie\springcloud\service\IPaymentService.class
-com\samphanie\springcloud\entities\Payment.class
 com\samphanie\springcloud\dao\PaymentDao.class
-com\samphanie\springcloud\vo\CommonResult.class
+com\samphanie\springcloud\config\ZipkinConfig$MySender.class
+com\samphanie\springcloud\config\ZipkinConfig.class

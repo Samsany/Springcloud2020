@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: cloud-consumer-order
+  # zipkin链路监控配置
+  zipkin:
+    base-url: www.samphanie.cn:9411
+  sleuth:
+    sampler:
+      # 采样率值介于0到1之间
+      probability: 1
 
 eureka:
   client:

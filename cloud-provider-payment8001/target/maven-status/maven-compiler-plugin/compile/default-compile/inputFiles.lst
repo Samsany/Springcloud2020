@@ -1,7 +1,6 @@
 E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\service\IPaymentService.java
+E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\config\ZipkinConfig.java
 E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\controller\PaymentController.java
-E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\vo\CommonResult.java
 E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\service\impl\PaymentServiceImpl.java
 E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\dao\PaymentDao.java
-E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\entities\Payment.java
 E:\IdeaProjects\cloud2020\cloud-provider-payment8001\src\main\java\com\samphanie\springcloud\PaymentMain8001.java
